@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <meta charset="utf-8"> 
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="author" content="Andreas Masaoutis" />
+        <meta name="copyright" content="Andreas Masaoutis" />
+
+        <meta property="og:type" content="article" />
+        <meta name="twitter:card" content="summary">
+
+<meta name="keywords" content="Introduction, 1 Project Description, " />
+
+<meta property="og:title" content="﻿Project Description - 2 get data "/>
+<meta property="og:url" content="/project-description-2-get-data.html" />
+<meta property="og:description" content="A Data Science project; get and organise the data" />
+<meta property="og:site_name" content="DSCP" />
+<meta property="og:article:author" content="Andreas Masaoutis" />
+<meta property="og:article:published_time" content="2019-03-13T10:20:00+01:00" />
+<meta property="" content="2019-10-04T18:40:00+02:00" />
+<meta name="twitter:title" content="﻿Project Description - 2 get data ">
+<meta name="twitter:description" content="A Data Science project; get and organise the data">
+
+        <title>﻿Project Description - 2 get data  · DSCP
+</title>
+        <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet">
+        <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.1/css/font-awesome.css" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="/theme/css/pygments.css" media="screen">
+        <link rel="stylesheet" type="text/css" href="/theme/tipuesearch/tipuesearch.css" media="screen">
+        <link rel="stylesheet" type="text/css" href="/theme/css/elegant.css" media="screen">
+        <link rel="stylesheet" type="text/css" href="/theme/css/custom.css" media="screen">
+    </head>
+    <body>
+        <div id="content-sans-footer">
+        <div class="navbar navbar-static-top">
+            <div class="navbar-inner">
+                <div class="container-fluid">
+                    <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </a>
+                    <a class="brand" href="/"><span class=site-name>DSCP -  Home</span></a>
+                    <div class="nav-collapse collapse">
+                        <ul class="nav pull-right top-menu">
+                           <!-- <li ><a href="">Home</a></li>
+            -->                                            <li ><a href="/pages/About.html">About</a></li>
+                            <li ><a href="/categories.html">Categories</a></li>
+                            <li ><a href="/tags.html">Tags</a></li>
+                            <li ><a href="/archives.html">Archives</a></li>
+                            <li><form class="navbar-search" action="/search.html" onsubmit="return validateForm(this.elements['q'].value);"> <input type="text" class="search-query" placeholder="Search" name="q" id="tipue_search_input"></form></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid">
+            <div class="row-fluid">
+                <div class="span1"></div>
+                <div class="span10">
+<article>
+<div class="row-fluid">
+    <header class="page-header span10 offset2">
+    <h1><a href="/project-description-2-get-data.html"> ﻿Project Description - 2 get data  </a></h1>
+    </header>
+</div>
+
+<div class="row-fluid">
+        <div class="span8 offset2 article-content">
+
+            
+            <p>Previous article: <a class="reference external" href="/project-description-1-initial-understanding.html">Project description - Project start</a></p>
+<p>Next article: <a class="reference external" href="/project-description-3-clean-data.html">Project description - Data wrangling</a></p>
+<div class="section" id="what-this-section-is-about">
+<h2>What this section is about</h2>
+<p>Once we have an initial understanding of the domain and the question at hand, it is time to move forward towards our data. In this section we have our first contact with the actual data.</p>
+<p>Data might come from different resources and in different formats. What we have to do is:</p>
+<ul class="simple">
+<li>to build our collection of data,</li>
+<li>decide about the ways we are going to store it, ie. the data architecture, and</li>
+<li>once stored, verify that the data is syntactically correct – ie. the structure of the data is correct.</li>
+</ul>
+<p>Let us see in more detail.</p>
+<p>They may come as simple files in various data formats:</p>
+<ul class="simple">
+<li><a class="reference external" href="https://en.wikipedia.org/wiki/Comma-separated_values">csv</a></li>
+<li><a class="reference external" href="https://en.wikipedia.org/wiki/Json">json</a></li>
+<li><a class="reference external" href="https://en.wikipedia.org/wiki/Spreadsheet">a spreadsheet file</a></li>
+<li>simple unstructured text</li>
+<li>and many others.</li>
+</ul>
+<p>Sometimes, we collect the data ourselves by scraping the web. It could also be the case that instead of individual files, data might reside in a database, in which case the relevant data has to be queried. We will cover more on the databases section. Overall, the point is that we have to collect the data that might even come in different formats.</p>
+<p>Yet, simply accumulating files with data, is not good enough; we need to homogenise and store them in some way. Think for a moment that we are being given a collection of files in different formats. Every time we need to get a set of data we have to go through many files, find the relevant pieces, bring them together, and transform them into a common format that is suitable for us. It is obvious that, although doable, such practice will not be productive at all.</p>
+<p>Instead, we should think once about the architecture of our data, implement a design, and have a homogeneous source of data that we can use. If, for example, we think that we might by using a computer language that has much better support for json rather than xml, then it makes sense to bring everything into json. There might be reasons to create one big master file with all the data, but if that gets too big for our file system or RAM maybe we should keep them split apart along some lines that make sense for our project. If we decide to keep the data in a database, the question arises: what kind of? Relational ones are the most common. But if we know that we want to perform some kind of network analysis, then maybe we should use a network database that is specific for the task.</p>
+<p>Without going any further it becomes clear that we have to think good about how to get, homogenise, and store our data, in such a way that it will be available and easily accessible to us during the project. In the process of doing so, we have to address an issue that relates to data quality.</p>
+<p>When we collect data, make transformations, and try to store them into a format/means, there is ample room for problems. Date formats is among the most common problems. Think of a simple case: same hardware, same operating system, same spreadsheet program, same data set, yet from one point in time to another the data analysis produced different results. Weird? Not at all… What had happened was a change in the system locale, that changed the way dates were interpreted. In the end, this is something trivial yet exactly because of that, in practice it can be really time wasting. And make no mistake; there are many little things that can go wrong: a trailing comma in a csv file that messes up the columns, a different specification in handling strings (single quotes, double quotes, etc.) that render inconsistent results, different end of line escape characters between operating systems, and so on.</p>
+<p>In order to address the problem we should immediately make sure that the data we have stored in our chosen architecture are in accordance with the data sources and with the specifications that we might have on that data. In order to do so we can perform various checks. After, for example, we input records into a database we should verify that at least the types and ranges of the various columns are correct. This step can be performed without knowing much about the data itself. But we definitely tell whether a column that is supposed to hold integers or dates does indeed hold these. But we can get only so far, since properly cleaning the data means looking at it and understanding it, which will be done in the next stage.</p>
+</div>
+<div class="section" id="input">
+<h2>input</h2>
+<p>At this stage, the input is all the various data sources that have been identified previously, and finally chosen here.</p>
+</div>
+<div class="section" id="processing-steps">
+<h2>processing steps:</h2>
+<ul class="simple">
+<li>Collect initial data</li>
+<li>Decide on the data architecture and store it</li>
+<li>Describe data</li>
+<li>Verify conformity to data standard - syntactic test</li>
+</ul>
+</div>
+<div class="section" id="output">
+<h2>output</h2>
+<p>review of decisions on data architecture, software choices, etc.
+the &quot;read only&quot; stored data - database, csv files, etc.
+code scripts for getting, loading, and verifying data
+data description - types, ranges, etc.</p>
+</div>
+<div class="section" id="example">
+<h2>example</h2>
+<p>We continue with the airdata example we introduced in the previous article. The competition organisers provided us with the relevant data. There is the main <a class="reference external" href="http://stat-computing.org/dataexpo/2009/the-data.html">flights data</a> section with one csv file for each year from 1987 to 2008, as well as <a class="reference external" href="http://stat-computing.org/dataexpo/2009/supplemental-data.html">supplemental data</a> with csv files with details on airports, aircrafts, etc.</p>
+<p>So we have our source of data, and we should make a decision about how to store the data. Remember though that the decision cannot be independent from the questions we want to ask and the analysis we plan to perform. If we simply want to focus on a certain year, say we are interested in a major snowstorm, we can maybe simply keep the csv of the relevant year. In case we want to focus on a certain airport or airline we might go through all csv files, dig out the relevant entries and keep them in a separate file. For more elaborate uses of the data, loading them in a database might be preferable. Depending on the kind of analysis we should choose different database technologies.</p>
+<p>Whatever we decide, we should take advantage of the documentation provided with the data, and produce our own for the choices we made. We will then be having a good source of data to begin with.</p>
+<p>##attention
+If we have to pay attention to a couple of points these would be:</p>
+<ul class="simple">
+<li>Be careful with the details. A trivial detail can create a lot of problems with your data and be hard to detect.</li>
+<li>Spend some time to think about the architecture of the data, thinking about the possible use scenarios. If you don’t get it right, it might be time consuming to get back and rebuild the data, even more if in the meantime there is a lot of undocumented choices about the data; if you change the source a lot of things will be then broken.</li>
+</ul>
+<p><a class="reference external" href="#top">Back to top</a></p>
+</div>
+
+            
+            
+            <hr/>
+        </div>
+        <section>
+        <div class="span2" style="float:right;font-size:0.9em;">
+            <h4>Published</h4>
+            <time pubdate="pubdate" datetime="2019-03-13T10:20:00+01:00">Mar 13, 2019</time>
+
+<h4>Last Updated</h4>
+<time datetime="2019-10-04T18:40:00+02:00">Oct 4, 2019</time>
+
+            <h4>Category</h4>
+            <a class="category-link" href="/categories.html#1-project-description-ref">1 Project Description</a>
+            <h4>Tags</h4>
+            <ul class="list-of-tags tags-in-article">
+                <li><a href="/tags.html#introduction-ref">Introduction
+                    <span>6</span>
+</a></li>
+            </ul>
+<h4>Contact</h4>
+    <a href="i" title="My g Profile" class="sidebar-social-links" target="_blank">
+    <i class="fa fa-t sidebar-social-links"></i></a>
+    <a href="t" title="My h Profile" class="sidebar-social-links" target="_blank">
+    <i class="fa fa-t sidebar-social-links"></i></a>
+        </div>
+        </section>
+</div>
+</article>
+                </div>
+                <div class="span1"></div>
+            </div>
+        </div>
+        <div id="push"></div>
+    </div>
+<footer>
+<div id="footer">
+    <ul class="footer-content">
+        <li class="elegant-power">Powered by <a href="http://getpelican.com/" title="Pelican Home Page">Pelican</a>. Theme adapted from: <a href="http://oncrashreboot.com/pelican-elegant" title="Theme Elegant Home Page">Elegant</a> by <a href="http://oncrashreboot.com" title="Talha Mansoor Home Page">Talha Mansoor</a></li>
+    </ul>
+</div>
+</footer>            <script src="https://code.jquery.com/jquery.min.js"></script>
+        <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+        <script>
+            function validateForm(query)
+            {
+                return (query.length > 0);
+            }
+        </script>
+
+    
+    </body>
+    <!-- Theme: Elegant built for Pelican
+    License : http://oncrashreboot.com/pelican-elegant -->
+</html>

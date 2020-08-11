@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <meta charset="utf-8"> 
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="author" content="Andreas Masaoutis" />
+        <meta name="copyright" content="Andreas Masaoutis" />
+
+        <meta property="og:type" content="article" />
+        <meta name="twitter:card" content="summary">
+
+<meta name="keywords" content="Introduction, 1 Project Description, " />
+
+<meta property="og:title" content="﻿Project Description - 1 initial understanding "/>
+<meta property="og:url" content="/project-description-1-initial-understanding.html" />
+<meta property="og:description" content="A Data Science project; how it comes to life and the first steps." />
+<meta property="og:site_name" content="DSCP" />
+<meta property="og:article:author" content="Andreas Masaoutis" />
+<meta property="og:article:published_time" content="2019-03-08T10:20:00+01:00" />
+<meta property="" content="2019-10-04T18:40:00+02:00" />
+<meta name="twitter:title" content="﻿Project Description - 1 initial understanding ">
+<meta name="twitter:description" content="A Data Science project; how it comes to life and the first steps.">
+
+        <title>﻿Project Description - 1 initial understanding  · DSCP
+</title>
+        <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet">
+        <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.1/css/font-awesome.css" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="/theme/css/pygments.css" media="screen">
+        <link rel="stylesheet" type="text/css" href="/theme/tipuesearch/tipuesearch.css" media="screen">
+        <link rel="stylesheet" type="text/css" href="/theme/css/elegant.css" media="screen">
+        <link rel="stylesheet" type="text/css" href="/theme/css/custom.css" media="screen">
+    </head>
+    <body>
+        <div id="content-sans-footer">
+        <div class="navbar navbar-static-top">
+            <div class="navbar-inner">
+                <div class="container-fluid">
+                    <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </a>
+                    <a class="brand" href="/"><span class=site-name>DSCP -  Home</span></a>
+                    <div class="nav-collapse collapse">
+                        <ul class="nav pull-right top-menu">
+                           <!-- <li ><a href="">Home</a></li>
+            -->                                            <li ><a href="/pages/About.html">About</a></li>
+                            <li ><a href="/categories.html">Categories</a></li>
+                            <li ><a href="/tags.html">Tags</a></li>
+                            <li ><a href="/archives.html">Archives</a></li>
+                            <li><form class="navbar-search" action="/search.html" onsubmit="return validateForm(this.elements['q'].value);"> <input type="text" class="search-query" placeholder="Search" name="q" id="tipue_search_input"></form></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid">
+            <div class="row-fluid">
+                <div class="span1"></div>
+                <div class="span10">
+<article>
+<div class="row-fluid">
+    <header class="page-header span10 offset2">
+    <h1><a href="/project-description-1-initial-understanding.html"> ﻿Project Description - 1 initial understanding  </a></h1>
+    </header>
+</div>
+
+<div class="row-fluid">
+        <div class="span8 offset2 article-content">
+
+            
+            <p>Previous article: <a class="reference external" href="/on-data-science.html">On Data Science</a></p>
+<p>Next article: <a class="reference external" href="/project-description-2-get-data.html">Project description - Get and store data</a></p>
+<div class="section" id="what-this-section-is-about">
+<h2>What this section is about</h2>
+<p>This is the setting stage for the project; it’s where the foundations are being put in place. As it is the case with most projects, this stage seems relatively easy with respect the heavy work that lies ahead, yet still, a mistake here costs a lot to fix later.</p>
+<p>Here we have our first contact with the project. In effect what we are dealing here with is a triangle, where each vertex corresponds to the data, the questions we have, and the underlying processes that produce the data and beg the questions. Let us see in greater detail.</p>
+<p>Data is at the heart of data science, yet data do not spring out of thin air. There are certain processes that produce this data. These processes might take place in far away stars, or within a financial institution; it doesn’t make much of difference. The point is that without knowing anything about the process that produced the data, one cannot make sense of it. Even if the data comes with a detailed description of it, still it is difficult to make sense of it.</p>
+<p>Think of a data set from an ATM: customer_ID, date and time, transaction type, amount, etc. When we examine the data we observe that the amounts withdrawn go up to a certain limit. We could assume that the data comes from an ATM, but what if there is a bank run in this country and the limits also apply to over the counter transactions? As you can see, data alone is almost useless, without knowledge of the processes that produced them. That is why is aim at collecting the knowledge that lies behind the data.</p>
+<p>At the same time, although the technical questions we try to solve in data science are pretty clear-cut, for example trying to predict the class of a new event, it is not that straight forward how to arrive at that final formulation of the question. Usually projects start with a more vague understanding of what is there to achieve. Keeping in mind the processes that generate the data and the goals of the stakeholders is necessary in order not to go astray.</p>
+<p>As we will work with the data on commercial passenger flights in the US, think of a scenario where we are being given a data set of all flights in the US, by a start-up that wants to build an application that will be predicting flight delays. Now, suppose that on the first run we see that we cannot deliver a really good prediction of delays. Rather, we can either predict delays on a subset of all flights, or we can provide insights on the delays but after these have taken place. Which way should we move forward? Well, this is a business question. Maybe the start-up should move into consulting airlines, rather than informing passengers. In any case, the decision comes from the business specific domain.</p>
+<p>To keep it short we can make these points:</p>
+<ul class="simple">
+<li>knowledge on the background processes shed light on the nature of the data.</li>
+<li>Understanding the data, improves our understanding of the background processes.</li>
+<li>The background processes, or the business setting, is necessary in order to understand the question at hand and define the ways to evaluate success or failure.</li>
+<li>Obviously the data will be used to shed light on the question</li>
+<li>Yet, the question itself provides some rough guidelines for approaching the data – decide on the relevant variables, etc</li>
+</ul>
+<p>In two words, the objective in this section is to define and describe the triangle of data, background, and question, in the best way possible.</p>
+</div>
+<div class="section" id="input">
+<h2>Input</h2>
+<p>As we have been pointing out, there are certain similarities between Data Science and other fields. In this case, in software engineering we begin with requirements gathering; in academic projects with a research proposal and an initial secondary literature. The input for the initial understanding of a data science project will be somewhat similar, too.</p>
+<p>This is a list with some commonplace items to look for:</p>
+<ul class="simple">
+<li>One should be able to capture the stakeholders’ view of the project. What is important to them, their objectives, etc. This can be captured through interviews, questionnaires, etc.</li>
+<li>As we’ve pointed out already, the initial question is usually embedded in a domain. Here, we look for the domain background of field/industry/problem. One aspect is the domain description: eventually the processes that generate the data. The other aspect is the “literature review”: what others have written and discovered about the problem domain.</li>
+<li>An overview of the possible sources of data, that might be relevant to the project.</li>
+<li>We should have an inventory of the material we have found relevant.</li>
+</ul>
+</div>
+<div class="section" id="processes">
+<h2>Processes</h2>
+</div>
+<div class="section" id="output">
+<h2>Output</h2>
+<p>The main objective is to capture the triangle of data, background, and initial question. The desired output is a good description of this triangle.</p>
+<p>This is a list with some commonplace items to look for:</p>
+<ul class="simple">
+<li>We need a summary that distills the stakeholders’ view from the input documents produced above, and provides the background for the main question, or family of questions. What are the assumptions behind these, and how do they relate to the aims of the project, the ways to assess success, etc.. Ideally we should have framed a hypothesis, that should guide the next sections.</li>
+<li>A description of the the background/domain. These are the real processes that explain what the relevant data is, and also the canvas on which the stakeholders operate. We need to have an understanding of these so that we can shed light on both the stakeholders' views and the data</li>
+<li>A decision for the data: what would the relevant data be with respect the initial question and background.</li>
+</ul>
+</div>
+<div class="section" id="example">
+<h2>Example</h2>
+<p>Let us provide some context for the things we have presented up to here.
+This is a <a class="reference external" href="http://stat-computing.org/dataexpo/2009">data competition</a> from 2009. The data consists of flight arrival and departure details for all commercial flights within the USA, from October 1987 to April 2008. The challenge posed, along the dataset, a list of possible questions the participants could address, such as the role of weather on flight delays, etc.</p>
+<p>So, we have a challenge. The ASA gave us a data set and a list of possible questions. Other people before us have participated in the competition and provided us with their findings. We could read these findings, go through the supportive material provided by ASA, put together our knowledge of the passenger airline industry. We could have a project started this way.</p>
+<p>Actually, once we are done with the project description we will use this challenge as our testing ground. For now, it is enough to see what a project looks like initially.</p>
+</div>
+<div class="section" id="attention">
+<h2>Attention</h2>
+<p>If we have to pay attention to a couple of points these would be:</p>
+<ul class="simple">
+<li>The business/domain is the canvas for the main question, and determines whether the question holds value for the business or not. One of the pitfalls for technically competent, yet careless data scientists, is to provide a great answer to an irrelevant question.</li>
+<li>Resist the hurry to jump into crunching data. The domain canvas, not only separates what is valuable from what is not, it is foundation for the whole project. Ask as many questions as possible, be as explicit with the assumptions as possible, and be systematic with what you collect. It seems like slowing you down, but it will later, surely, pay back.</li>
+</ul>
+<p><a class="reference external" href="#top">Back to top</a></p>
+</div>
+
+            
+            
+            <hr/>
+        </div>
+        <section>
+        <div class="span2" style="float:right;font-size:0.9em;">
+            <h4>Published</h4>
+            <time pubdate="pubdate" datetime="2019-03-08T10:20:00+01:00">Mar 8, 2019</time>
+
+<h4>Last Updated</h4>
+<time datetime="2019-10-04T18:40:00+02:00">Oct 4, 2019</time>
+
+            <h4>Category</h4>
+            <a class="category-link" href="/categories.html#1-project-description-ref">1 Project Description</a>
+            <h4>Tags</h4>
+            <ul class="list-of-tags tags-in-article">
+                <li><a href="/tags.html#introduction-ref">Introduction
+                    <span>6</span>
+</a></li>
+            </ul>
+<h4>Contact</h4>
+    <a href="i" title="My g Profile" class="sidebar-social-links" target="_blank">
+    <i class="fa fa-t sidebar-social-links"></i></a>
+    <a href="t" title="My h Profile" class="sidebar-social-links" target="_blank">
+    <i class="fa fa-t sidebar-social-links"></i></a>
+        </div>
+        </section>
+</div>
+</article>
+                </div>
+                <div class="span1"></div>
+            </div>
+        </div>
+        <div id="push"></div>
+    </div>
+<footer>
+<div id="footer">
+    <ul class="footer-content">
+        <li class="elegant-power">Powered by <a href="http://getpelican.com/" title="Pelican Home Page">Pelican</a>. Theme adapted from: <a href="http://oncrashreboot.com/pelican-elegant" title="Theme Elegant Home Page">Elegant</a> by <a href="http://oncrashreboot.com" title="Talha Mansoor Home Page">Talha Mansoor</a></li>
+    </ul>
+</div>
+</footer>            <script src="https://code.jquery.com/jquery.min.js"></script>
+        <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+        <script>
+            function validateForm(query)
+            {
+                return (query.length > 0);
+            }
+        </script>
+
+    
+    </body>
+    <!-- Theme: Elegant built for Pelican
+    License : http://oncrashreboot.com/pelican-elegant -->
+</html>

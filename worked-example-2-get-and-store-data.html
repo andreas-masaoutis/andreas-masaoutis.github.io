@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <meta charset="utf-8"> 
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="author" content="Andreas Masaoutis" />
+        <meta name="copyright" content="Andreas Masaoutis" />
+
+        <meta property="og:type" content="article" />
+        <meta name="twitter:card" content="summary">
+
+<meta name="keywords" content="Databases, 4 Worked Example, " />
+
+<meta property="og:title" content="﻿Worked Example - 2 get and store data "/>
+<meta property="og:url" content="/worked-example-2-get-and-store-data.html" />
+<meta property="og:description" content="A worked example to demonstrate how to execute a project: get and store data" />
+<meta property="og:site_name" content="DSCP" />
+<meta property="og:article:author" content="Andreas Masaoutis" />
+<meta property="og:article:published_time" content="2019-04-09T10:20:00+02:00" />
+<meta property="" content="2019-10-04T18:40:00+02:00" />
+<meta name="twitter:title" content="﻿Worked Example - 2 get and store data ">
+<meta name="twitter:description" content="A worked example to demonstrate how to execute a project: get and store data">
+
+        <title>﻿Worked Example - 2 get and store data  · DSCP
+</title>
+        <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet">
+        <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.1/css/font-awesome.css" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="/theme/css/pygments.css" media="screen">
+        <link rel="stylesheet" type="text/css" href="/theme/tipuesearch/tipuesearch.css" media="screen">
+        <link rel="stylesheet" type="text/css" href="/theme/css/elegant.css" media="screen">
+        <link rel="stylesheet" type="text/css" href="/theme/css/custom.css" media="screen">
+    </head>
+    <body>
+        <div id="content-sans-footer">
+        <div class="navbar navbar-static-top">
+            <div class="navbar-inner">
+                <div class="container-fluid">
+                    <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </a>
+                    <a class="brand" href="/"><span class=site-name>DSCP -  Home</span></a>
+                    <div class="nav-collapse collapse">
+                        <ul class="nav pull-right top-menu">
+                           <!-- <li ><a href="">Home</a></li>
+            -->                                            <li ><a href="/pages/About.html">About</a></li>
+                            <li ><a href="/categories.html">Categories</a></li>
+                            <li ><a href="/tags.html">Tags</a></li>
+                            <li ><a href="/archives.html">Archives</a></li>
+                            <li><form class="navbar-search" action="/search.html" onsubmit="return validateForm(this.elements['q'].value);"> <input type="text" class="search-query" placeholder="Search" name="q" id="tipue_search_input"></form></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid">
+            <div class="row-fluid">
+                <div class="span1"></div>
+                <div class="span10">
+<article>
+<div class="row-fluid">
+    <header class="page-header span10 offset2">
+    <h1><a href="/worked-example-2-get-and-store-data.html"> ﻿Worked Example - 2 get and store data  </a></h1>
+    </header>
+</div>
+
+<div class="row-fluid">
+        <div class="span8 offset2 article-content">
+
+            
+            <p>Previous article: <a class="reference external" href="/worked-example-1-initial-questions.html">Worked Example - 1 initial questions</a></p>
+<p>Next article: <a class="reference external" href="/worked-example-3-clean-data.html">Worked Example - 3 clean data;</a></p>
+<div class="section" id="get-and-store-data">
+<h2>Get and store data</h2>
+<p>The main goal for this stage is to get the relevant data and store them in a way that will be useful for the project duration. In the previous section we had identified what the relevant data is; in our project the competition organisers have provided it for us.</p>
+<p>Take the time to examine the contents of the relevant project folders, and experiment with them.</p>
+<p>The range of dates go from 1987 to 2008, where each file contains millions of observations. For practical reasons we will download only the 2008 data; it will be enough for now. Therefore the input folder contains the four files on flights, carriers, airports, and planes. The raw data should strictly be read only.</p>
+<p>The output folders contains the next list of elements:</p>
+<ul class="simple">
+<li>The data report. In there one can find a detailed description of choices we make with respect to storing the data. Why we choose a relational database, why SQLite, points of attention with respect the the characteristics of the data, etc.</li>
+<li>The database documentation. In there one will find the specifics about the way our data fits into a relational database system, which in our case in SQLite. What the tables stand for, their interrelations, etc. It is  the fundamental blueprint for our database</li>
+<li>The database creation script. It contains the definitions of the tables, the column names and types, etc. We have chosen to include it as a separate file for two main reasons. It supplements the rest of the documentation, and at the same time any change to the database - column names, types, etc. - start from this script.</li>
+<li>The Jupyter Notebook. In there one will find all the actual code for this phase with which we set up the database, following the blueprints, populated it with the data, tuned it, etc.</li>
+<li>Last, but not least, the database itself which will be the main source of data for the next phases.</li>
+</ul>
+<p>One of the things to note is that in effect we have already performed our first data check. While creating the database we had to perform certain checks in order to immediately catch out problems created by the transformation of the csv files, or by discrepancies between the actual csv and the definitions of the data providers. With these checks we have verified that, at least, what we have in our database is in accordance with the definitions we had.</p>
+<p>Sources:</p>
+<ul class="simple">
+<li>You can find the relevant material for the second phase at the GitHub project <a class="reference external" href="https://github.com/andreas-masaoutis/dscp_code-documentation/tree/master/phase_2">repository</a></li>
+<li>For the coding details, take a look at the <a class="reference external" href="https://github.com/andreas-masaoutis/dscp_code-documentation/blob/master/phase_2/phase_2_codebase.ipynb">Jupyter Notebook</a></li>
+</ul>
+<p><a class="reference external" href="#top">Back to top</a></p>
+</div>
+
+            
+            
+            <hr/>
+        </div>
+        <section>
+        <div class="span2" style="float:right;font-size:0.9em;">
+            <h4>Published</h4>
+            <time pubdate="pubdate" datetime="2019-04-09T10:20:00+02:00">Apr 9, 2019</time>
+
+<h4>Last Updated</h4>
+<time datetime="2019-10-04T18:40:00+02:00">Oct 4, 2019</time>
+
+            <h4>Category</h4>
+            <a class="category-link" href="/categories.html#4-worked-example-ref">4 Worked Example</a>
+            <h4>Tags</h4>
+            <ul class="list-of-tags tags-in-article">
+                <li><a href="/tags.html#databases-ref">Databases
+                    <span>1</span>
+</a></li>
+            </ul>
+<h4>Contact</h4>
+    <a href="i" title="My g Profile" class="sidebar-social-links" target="_blank">
+    <i class="fa fa-t sidebar-social-links"></i></a>
+    <a href="t" title="My h Profile" class="sidebar-social-links" target="_blank">
+    <i class="fa fa-t sidebar-social-links"></i></a>
+        </div>
+        </section>
+</div>
+</article>
+                </div>
+                <div class="span1"></div>
+            </div>
+        </div>
+        <div id="push"></div>
+    </div>
+<footer>
+<div id="footer">
+    <ul class="footer-content">
+        <li class="elegant-power">Powered by <a href="http://getpelican.com/" title="Pelican Home Page">Pelican</a>. Theme adapted from: <a href="http://oncrashreboot.com/pelican-elegant" title="Theme Elegant Home Page">Elegant</a> by <a href="http://oncrashreboot.com" title="Talha Mansoor Home Page">Talha Mansoor</a></li>
+    </ul>
+</div>
+</footer>            <script src="https://code.jquery.com/jquery.min.js"></script>
+        <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+        <script>
+            function validateForm(query)
+            {
+                return (query.length > 0);
+            }
+        </script>
+
+    
+    </body>
+    <!-- Theme: Elegant built for Pelican
+    License : http://oncrashreboot.com/pelican-elegant -->
+</html>

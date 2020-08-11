@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <meta charset="utf-8"> 
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="author" content="Andreas Masaoutis" />
+        <meta name="copyright" content="Andreas Masaoutis" />
+
+        <meta property="og:type" content="article" />
+        <meta name="twitter:card" content="summary">
+
+<meta name="keywords" content="web scraping, text mining, 5 Variations, " />
+
+<meta property="og:title" content="﻿Variations - Web scraping and text mining "/>
+<meta property="og:url" content="/variations-web-scraping-and-text-mining.html" />
+<meta property="og:description" content="Exploring variations of the main theme: collecting textual data on the internet, and analysing it." />
+<meta property="og:site_name" content="DSCP" />
+<meta property="og:article:author" content="Andreas Masaoutis" />
+<meta property="og:article:published_time" content="2020-04-16T10:20:00+02:00" />
+<meta property="" content="2020-10-04T18:40:00+02:00" />
+<meta name="twitter:title" content="﻿Variations - Web scraping and text mining ">
+<meta name="twitter:description" content="Exploring variations of the main theme: collecting textual data on the internet, and analysing it.">
+
+        <title>﻿Variations - Web scraping and text mining  · DSCP
+</title>
+        <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet">
+        <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.1/css/font-awesome.css" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="/theme/css/pygments.css" media="screen">
+        <link rel="stylesheet" type="text/css" href="/theme/tipuesearch/tipuesearch.css" media="screen">
+        <link rel="stylesheet" type="text/css" href="/theme/css/elegant.css" media="screen">
+        <link rel="stylesheet" type="text/css" href="/theme/css/custom.css" media="screen">
+    </head>
+    <body>
+        <div id="content-sans-footer">
+        <div class="navbar navbar-static-top">
+            <div class="navbar-inner">
+                <div class="container-fluid">
+                    <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </a>
+                    <a class="brand" href="/"><span class=site-name>DSCP -  Home</span></a>
+                    <div class="nav-collapse collapse">
+                        <ul class="nav pull-right top-menu">
+                           <!-- <li ><a href="">Home</a></li>
+            -->                                            <li ><a href="/pages/About.html">About</a></li>
+                            <li ><a href="/categories.html">Categories</a></li>
+                            <li ><a href="/tags.html">Tags</a></li>
+                            <li ><a href="/archives.html">Archives</a></li>
+                            <li><form class="navbar-search" action="/search.html" onsubmit="return validateForm(this.elements['q'].value);"> <input type="text" class="search-query" placeholder="Search" name="q" id="tipue_search_input"></form></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid">
+            <div class="row-fluid">
+                <div class="span1"></div>
+                <div class="span10">
+<article>
+<div class="row-fluid">
+    <header class="page-header span10 offset2">
+    <h1><a href="/variations-web-scraping-and-text-mining.html"> ﻿Variations -  Web scraping and text mining  </a></h1>
+    </header>
+</div>
+
+<div class="row-fluid">
+        <div class="span8 offset2 article-content">
+
+            
+            <p>Previous article: <a class="reference external" href="/worked-example-5-communicate.html">Worked Example - 5 communicate</a></p>
+<div class="section" id="introduction">
+<h2>Introduction</h2>
+<p>This piece of text accompanies the codebase of a mini project on
+web-scarping and text analysis. The mini project aims at providing
+a variation to the themes we have covered until now:</p>
+<ul class="simple">
+<li>First, instead of downloading a ready dataset, we scrap a web page and collect the data we want.</li>
+<li>Second, the main part of dataset is textual and we use different kinds of algorithms.</li>
+</ul>
+<p>Our mini project has three, conceptual, parts:</p>
+<ol class="arabic simple">
+<li>The scraper that scrapes off the data from web pages</li>
+<li>The database that holds the scraped data</li>
+<li>And the analytics engine, where the data reveals its secrets...</li>
+</ol>
+<p>This page, that describes the project and discusses some of its
+technical aspects, along with comments inserted in the code, should give an understanding of how the code works and why it is written that way.
+The next three sections correspond to the three conceptual parts described previously, and we shall see each one in turn.</p>
+</div>
+<div class="section" id="introducing-scrapy">
+<h2>Introducing Scrapy</h2>
+<p>This is the part responsible for collecting the data from the web. These programs are usually called web-scrapers and the part that goes from a web page to the next, is also called a spider. The main principles of their operation are the following:</p>
+<ul class="simple">
+<li>Ask for and get a web page from the Internet</li>
+<li>Parse the content of the web page and get out the desired data</li>
+<li>Route the scraped data to a means of data persistence</li>
+<li>Repeat for as long as there are links to follow</li>
+</ul>
+<p>We are using a Python framework dedicated to web-crawling, named <a class="reference external" href="https://scrapy.org/">Scrapy</a> (version 1.6.0). This framework hides away a lot of the details, making it easier to get started with crawling the web, yet at the same time is powerful enough to be used in industrial software projects.
+Scrapy was chosen over Selenium and BeautifulSoup, two other similar Python frameworks, mostly because it can handle large projects, while also being user friendly.</p>
+<p>For more details and the documentation of Scrapy visit the
+<a class="reference external" href="https://docs.scrapy.org/en/1.6/">docs</a></p>
+<p>What lies at the heart of the Scrapy work-flow is the concept of a &quot;scrapy project&quot;, that when initiated most of the necessary code is  automatically created and organised in a folder and a couple of sub-folders; in our case these are found in &quot;scraping_project/wikipedia1&quot; and &quot;scraping_project/wikipedia2&quot;. Here is a list of the main files that define a project:</p>
+<ul class="simple">
+<li>settings.py: it controls all the commonly used settings for a project, like the name of the project, the speed to send page requests to a site, etc.</li>
+<li>spiders/spider_name.py: the central piece that defines how the crawler will move from page to page, how it will parse the pages, etc.</li>
+<li>items.py: in that we define the structure of the container the spider will use to collect and save the parsed data</li>
+<li>pipelines.py: finally, this file controls the way the spider will send the &quot;item&quot; it has collected, to a file on disk, or a database, etc.</li>
+</ul>
+</div>
+<div class="section" id="our-mini-project-the-scraper">
+<h2>Our mini project: the scraper</h2>
+<p>In our case we have two small scrapy projects, with their spiders. The target to scrape is wikipedia. In particular, from a page with a list of companies in Italy, spider1 gets the name, industry, sector, headquarter location, foundation year, along with the url of the company's page in wikipedia. Spider2 then, uses the list of urls, visits these pages one by one, and scrapes all the text (relevant to the firm) from each page. All the pieces of data are being saved into a document database, and this brings us to the second part...</p>
+</div>
+<div class="section" id="introducing-tinydb">
+<h2>Introducing TinyDB!</h2>
+<p>Databases are used in order to store, process and retrieve data, in ways more complex and sophisticated than what a simple file system could do. By the term we mean the file where the data physically reside, along the software systems that we use in order to perform the actions we want. In our case we have chosen to use <a class="reference external" href="https://tinydb.readthedocs.io/en/latest">TinyDB!</a>, a serverless document-oriented database. Let us see what these terms mean.</p>
+<p>Usually database systems are build around the concept of client-server architecture, where the application is build in two parts, that communicate using network protocols - even inside one machine. TinyDB! is a single application, which makes it easier to set up and use.</p>
+<p>Document databases, belong to the NoSQL kind. Document stands for a record the database that can have many fields, that can also be nested. That means, that we can store data of arbitrary complexity in such a system, while it is also possible that each record has a different structure. In contrast, relational databases need a predefined structure, and can have trouble handling heterogeneous data.</p>
+<p>For our purposes a document database system with its flexibility is more suitable to hold scraped data. Note for example, that our two spiders, got different kinds of data from the pages they visited; with as relational database system we would have to declare in advance, once for each spider, the structure of the data. Additionally, TinyDB! has the advantage of being native to Python and can be used with a simple Python command. Of course,
+for a larger project, a more sophisticated system, such as MongoDB, should be used.</p>
+</div>
+<div class="section" id="our-mini-project-the-database">
+<h2>Our mini project: the database</h2>
+<p>For our project, the database is represented by the two json files found in the codebase folder. Each file is created and populated with data, by each of our two spiders. wikipeida1_db.json holds the data from the list of Italian firms, name, industry, sector, headquarter location, foundation year, along with the url of the company's page in wikipedia.
+wikipeida2_db.json holds the url along all the text of the company's wikipedia site. As a final step, we join the site text, to the rest of the company's data, and we get our main dataset that we will use for analysis...</p>
+</div>
+<div class="section" id="the-analytics-part">
+<h2>The analytics part</h2>
+<p>Once we have a dataset, we can start with the analytics part. Of course, in practice even before a single line of code gets written, we do have an idea of what are we looking for. These questions determine, to a large extent, the data we are after and the techniques to employ for its analysis. In this mini project, we want to collect textual data and perform any kind of text data analysis with it.</p>
+<p>The main tool we are going to use is the Jupyter Notebook, an interactive, web based application that can run Python code, generate graphs and share the results of the analysis.</p>
+<p>The work flow of an analytics project, once the cleaned data set is in place, has roughly two phases. First we explore the data in order to gain an initial understanding about it, and then we build the model, statistical, or machine learning, etc, that we believe can answer the question we have.</p>
+<p>For this part we have made use of the Python scientific computing
+ecosystem, that includes <a class="reference external" href="https://www.numpy.org/">NumPy</a> for numerical computations, <a class="reference external" href="https://pandas.pydata.org/">Pandas</a>
+for handling and wrangling data, <a class="reference external" href="http://nltk.org/">NLTK</a> for the processing of out
+textual data, and <a class="reference external" href="https://www.scipy.org/">SciPy</a> for the algorithms we used for building our
+data model.</p>
+</div>
+<div class="section" id="what-we-have-found-out">
+<h2>What we have found out</h2>
+<p>The figure below is a small example of the process of turning data into insights. What we see is the number of currently existing firms founded in Italy, per year, since 1750.</p>
+<div class="figure">
+<img alt="" src="images/foundation_years.png" />
+<div class="legend">
+Out of the existing main Italian companies, we have counted how may were founded for each year, since 1750.</div>
+</div>
+<p>The relevant Wikipedia <a class="reference external" href="https://en.wikipedia.org/wiki/List_of_companies_of_Italy">page</a> contains a table with data for each firm. We managed to  automatically get the data, store it, manipulate it, and transform the raw data into insights. This graph, for example, gives us a quick view of an aspect of the economic history of  Italy. There was a boom in the birth of firms right after WWII, a slowdown during the 80's that was a time of economic crisis for Italy, etc. We should keep in mind that once we have the infrastructure ready, we can easily get much more data and insights. Wikipedia has pages listing the firms for many coutries, while our scraper, database, and analytics tools can capture and handle all that data.</p>
+<p>That is quite something indeed, isn't it?</p>
+<p>Sources:</p>
+<ul class="simple">
+<li>You can find all the relevant material for this mini project, at the GitHub <a class="reference external" href="https://github.com/andreas-masaoutis/dscp_code-documentation/tree/master/scraping_project">repository</a></li>
+<li>Take a look, too, at all the code, in the <a class="reference external" href="https://github.com/andreas-masaoutis/dscp_code-documentation/blob/master/scraping_project/scraping_wikipedia.ipynb">Jupyter Notebook</a></li>
+</ul>
+<p><a class="reference external" href="#top">Back to top</a></p>
+</div>
+
+            
+            
+            <hr/>
+        </div>
+        <section>
+        <div class="span2" style="float:right;font-size:0.9em;">
+            <h4>Published</h4>
+            <time pubdate="pubdate" datetime="2020-04-16T10:20:00+02:00">Apr 16, 2020</time>
+
+<h4>Last Updated</h4>
+<time datetime="2020-10-04T18:40:00+02:00">Oct 4, 2020</time>
+
+            <h4>Category</h4>
+            <a class="category-link" href="/categories.html#5-variations-ref">5 Variations</a>
+            <h4>Tags</h4>
+            <ul class="list-of-tags tags-in-article">
+                <li><a href="/tags.html#text-mining-ref">text mining
+                    <span>1</span>
+</a></li>
+                <li><a href="/tags.html#web-scraping-ref">web scraping
+                    <span>1</span>
+</a></li>
+            </ul>
+<h4>Contact</h4>
+    <a href="i" title="My g Profile" class="sidebar-social-links" target="_blank">
+    <i class="fa fa-t sidebar-social-links"></i></a>
+    <a href="t" title="My h Profile" class="sidebar-social-links" target="_blank">
+    <i class="fa fa-t sidebar-social-links"></i></a>
+        </div>
+        </section>
+</div>
+</article>
+                </div>
+                <div class="span1"></div>
+            </div>
+        </div>
+        <div id="push"></div>
+    </div>
+<footer>
+<div id="footer">
+    <ul class="footer-content">
+        <li class="elegant-power">Powered by <a href="http://getpelican.com/" title="Pelican Home Page">Pelican</a>. Theme adapted from: <a href="http://oncrashreboot.com/pelican-elegant" title="Theme Elegant Home Page">Elegant</a> by <a href="http://oncrashreboot.com" title="Talha Mansoor Home Page">Talha Mansoor</a></li>
+    </ul>
+</div>
+</footer>            <script src="https://code.jquery.com/jquery.min.js"></script>
+        <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+        <script>
+            function validateForm(query)
+            {
+                return (query.length > 0);
+            }
+        </script>
+
+    
+    </body>
+    <!-- Theme: Elegant built for Pelican
+    License : http://oncrashreboot.com/pelican-elegant -->
+</html>

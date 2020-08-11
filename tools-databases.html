@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <meta charset="utf-8"> 
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="author" content="Andreas Masaoutis" />
+        <meta name="copyright" content="Andreas Masaoutis" />
+
+        <meta property="og:type" content="article" />
+        <meta name="twitter:card" content="summary">
+
+<meta name="keywords" content="Programming, Jupyter, 3 Tools, " />
+
+<meta property="og:title" content="﻿Tools - Databases "/>
+<meta property="og:url" content="/tools-databases.html" />
+<meta property="og:description" content="Reviewing the tools we need for a Data Science project- databases" />
+<meta property="og:site_name" content="DSCP" />
+<meta property="og:article:author" content="Andreas Masaoutis" />
+<meta property="og:article:published_time" content="2019-04-04T10:20:00+02:00" />
+<meta property="" content="2019-10-04T18:40:00+02:00" />
+<meta name="twitter:title" content="﻿Tools - Databases ">
+<meta name="twitter:description" content="Reviewing the tools we need for a Data Science project- databases">
+
+        <title>﻿Tools - Databases  · DSCP
+</title>
+        <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet">
+        <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.1/css/font-awesome.css" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="/theme/css/pygments.css" media="screen">
+        <link rel="stylesheet" type="text/css" href="/theme/tipuesearch/tipuesearch.css" media="screen">
+        <link rel="stylesheet" type="text/css" href="/theme/css/elegant.css" media="screen">
+        <link rel="stylesheet" type="text/css" href="/theme/css/custom.css" media="screen">
+    </head>
+    <body>
+        <div id="content-sans-footer">
+        <div class="navbar navbar-static-top">
+            <div class="navbar-inner">
+                <div class="container-fluid">
+                    <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </a>
+                    <a class="brand" href="/"><span class=site-name>DSCP -  Home</span></a>
+                    <div class="nav-collapse collapse">
+                        <ul class="nav pull-right top-menu">
+                           <!-- <li ><a href="">Home</a></li>
+            -->                                            <li ><a href="/pages/About.html">About</a></li>
+                            <li ><a href="/categories.html">Categories</a></li>
+                            <li ><a href="/tags.html">Tags</a></li>
+                            <li ><a href="/archives.html">Archives</a></li>
+                            <li><form class="navbar-search" action="/search.html" onsubmit="return validateForm(this.elements['q'].value);"> <input type="text" class="search-query" placeholder="Search" name="q" id="tipue_search_input"></form></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid">
+            <div class="row-fluid">
+                <div class="span1"></div>
+                <div class="span10">
+<article>
+<div class="row-fluid">
+    <header class="page-header span10 offset2">
+    <h1><a href="/tools-databases.html"> ﻿Tools - Databases  </a></h1>
+    </header>
+</div>
+
+<div class="row-fluid">
+        <div class="span8 offset2 article-content">
+
+            
+            <p>Previous article: <a class="reference external" href="/tools-jupyter.html">Tools - Jupyter</a></p>
+<p>Next article: <a class="reference external" href="/worked-example-1-initial-questions.html">Worked Example - 1 initial questions</a></p>
+<div class="section" id="id1">
+<h2>Tools: Databases</h2>
+</div>
+<div class="section" id="what-is-it-about">
+<h2>What is it about</h2>
+<p>Databases provide us with a way to store data and manipulate it. The acronym CRUD, which stands for Create, Read, Update, and Delete, describes what we can do with the data. Although we use the term database, as if it was a singular entity, simplifying a lot, we can say that a database system is comprised of two parts: the physical means, such as a file, where the data is stored, and the program that allows the users to interact with the data. These systems were invented in order to overcome the limitations of using simple flat files to store information, as it happened until the 70's. Database systems can provide important functionality and solve practical problems for mission critical applications, such as banking transactions , complex project management, etc.</p>
+<p>There are different kinds of databases, that one might come across in data projects, each with its own characteristics. By 'different kinds' we mean, that they are built around different concepts of how to model and store data, along with different ways to interact with it. These differences lead to database tools that are suitable for different uses.</p>
+<p>The well established relational database was on of the first such systems. It relies heavily on a theoretical model of data, developed in the early 70's. The majority of the databases from the era of the mainframe computers to that of the personal computer, were of this kind. A then new computer language - SQL (Structure Query Language ) - was invented to program with these databases</p>
+<p>With the advent of the Internet, the industry developed new tools to cover new needs. Relational databases, cannot be easily distributed across many nodes, and become cumbersome to use after they grow in size. With the era of big data the so called, NoSQL databases made their appearance.</p>
+<p>Document databases are much more flexible in their theoretical model about data. As a result they can handle more complex kinds of data, such as text, with less rigid rules. In addition they can be distributed, so by adding commodity hardware in a network one can store and work with any amount of data.</p>
+<p>Network databases  focus on the representation of real world networks, in such a way so that it is easy to insert the data, but also query it, and work with the network.</p>
+<p>As time goes on and technology advances more NoSQL databases will become available.</p>
+</div>
+<div class="section" id="how-does-it-fit-in-data-science">
+<h2>How does it fit in Data Science</h2>
+<p>In Data Science databases play a significant role. As projects grow larger and work with bigger amounts of data, it is quite common for the data to reside in a database system. With the functionality of databases it is possible to perform most of the parts of a data project inside a database, like as we saw clean, validate and summarise data. In some cases, when the data does not fit in the RAM memory of the computer we use, we do have to use such a system. The trick a database system does, is that it holds the data in a file on the disk and operates on the data without loading all of it at once onto RAM. It can be slower, but it can processes pieces of information that do not fit in memory. Therefore, although it is not necessary to know how to built or administer such a system, one should know how use it. Since relational systems are most common we should examine them further.</p>
+</div>
+<div class="section" id="some-details-of-relational-dbs">
+<h2>Some details of relational DBs</h2>
+<p>The central concept is that of a relation. You can think of a relation like a spreadsheet table, that comprises of rows and columns. Each row has to be unique and is characterised by a key, while each column has to hold unique objects of the same type. Additional restrictions
+about the relations between the various columns of the table, ensure the validity of the theoretical model, and eventually that the database will operate as expected, and will not return incorrect results.</p>
+</div>
+<div class="section" id="sqlite-in-python">
+<h2>SQLite in Python</h2>
+<p>One simple and accessible database system is Sqlite. What makes it unique is that it has a simpler architecture for the features that offers, and a small size. That makes it ideal for small projects since the maintenance overhead is small. Python, through the pysqlite module of the standard library, offers a simple way to create and use a database with SQLite. For our purposes in this blog, this is the right tool.</p>
+<p>sources:</p>
+<ul class="simple">
+<li><a class="reference external" href="http://swcarpentry.github.io/sql-novice-survey">Software Carpentry : SQL</a></li>
+<li><a class="reference external" href="http://www.sqlitetutorial.net/sqlite-python">SQLite Python tutorial</a></li>
+</ul>
+<p><a class="reference external" href="#top">Back to top</a></p>
+</div>
+
+            
+            
+            <hr/>
+        </div>
+        <section>
+        <div class="span2" style="float:right;font-size:0.9em;">
+            <h4>Published</h4>
+            <time pubdate="pubdate" datetime="2019-04-04T10:20:00+02:00">Apr 4, 2019</time>
+
+<h4>Last Updated</h4>
+<time datetime="2019-10-04T18:40:00+02:00">Oct 4, 2019</time>
+
+            <h4>Category</h4>
+            <a class="category-link" href="/categories.html#3-tools-ref">3 Tools</a>
+            <h4>Tags</h4>
+            <ul class="list-of-tags tags-in-article">
+                <li><a href="/tags.html#jupyter-ref">Jupyter
+                    <span>2</span>
+</a></li>
+                <li><a href="/tags.html#programming-ref">Programming
+                    <span>4</span>
+</a></li>
+            </ul>
+<h4>Contact</h4>
+    <a href="i" title="My g Profile" class="sidebar-social-links" target="_blank">
+    <i class="fa fa-t sidebar-social-links"></i></a>
+    <a href="t" title="My h Profile" class="sidebar-social-links" target="_blank">
+    <i class="fa fa-t sidebar-social-links"></i></a>
+        </div>
+        </section>
+</div>
+</article>
+                </div>
+                <div class="span1"></div>
+            </div>
+        </div>
+        <div id="push"></div>
+    </div>
+<footer>
+<div id="footer">
+    <ul class="footer-content">
+        <li class="elegant-power">Powered by <a href="http://getpelican.com/" title="Pelican Home Page">Pelican</a>. Theme adapted from: <a href="http://oncrashreboot.com/pelican-elegant" title="Theme Elegant Home Page">Elegant</a> by <a href="http://oncrashreboot.com" title="Talha Mansoor Home Page">Talha Mansoor</a></li>
+    </ul>
+</div>
+</footer>            <script src="https://code.jquery.com/jquery.min.js"></script>
+        <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+        <script>
+            function validateForm(query)
+            {
+                return (query.length > 0);
+            }
+        </script>
+
+    
+    </body>
+    <!-- Theme: Elegant built for Pelican
+    License : http://oncrashreboot.com/pelican-elegant -->
+</html>

@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <meta charset="utf-8"> 
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="author" content="Andreas Masaoutis" />
+        <meta name="copyright" content="Andreas Masaoutis" />
+
+        <meta property="og:type" content="article" />
+        <meta name="twitter:card" content="summary">
+
+<meta name="keywords" content="Machine Learning, 4 Worked Example, " />
+
+<meta property="og:title" content="﻿Worked Example - 4 drawing conclusions "/>
+<meta property="og:url" content="/worked-example-4-drawing-conclusions.html" />
+<meta property="og:description" content="A worked example to demonstrate how to execute a project: leverage ML algorithms to draw conclusions" />
+<meta property="og:site_name" content="DSCP" />
+<meta property="og:article:author" content="Andreas Masaoutis" />
+<meta property="og:article:published_time" content="2019-04-12T10:20:00+02:00" />
+<meta property="" content="2019-10-04T18:40:00+02:00" />
+<meta name="twitter:title" content="﻿Worked Example - 4 drawing conclusions ">
+<meta name="twitter:description" content="A worked example to demonstrate how to execute a project: leverage ML algorithms to draw conclusions">
+
+        <title>﻿Worked Example - 4 drawing conclusions  · DSCP
+</title>
+        <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet">
+        <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.1/css/font-awesome.css" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="/theme/css/pygments.css" media="screen">
+        <link rel="stylesheet" type="text/css" href="/theme/tipuesearch/tipuesearch.css" media="screen">
+        <link rel="stylesheet" type="text/css" href="/theme/css/elegant.css" media="screen">
+        <link rel="stylesheet" type="text/css" href="/theme/css/custom.css" media="screen">
+    </head>
+    <body>
+        <div id="content-sans-footer">
+        <div class="navbar navbar-static-top">
+            <div class="navbar-inner">
+                <div class="container-fluid">
+                    <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </a>
+                    <a class="brand" href="/"><span class=site-name>DSCP -  Home</span></a>
+                    <div class="nav-collapse collapse">
+                        <ul class="nav pull-right top-menu">
+                           <!-- <li ><a href="">Home</a></li>
+            -->                                            <li ><a href="/pages/About.html">About</a></li>
+                            <li ><a href="/categories.html">Categories</a></li>
+                            <li ><a href="/tags.html">Tags</a></li>
+                            <li ><a href="/archives.html">Archives</a></li>
+                            <li><form class="navbar-search" action="/search.html" onsubmit="return validateForm(this.elements['q'].value);"> <input type="text" class="search-query" placeholder="Search" name="q" id="tipue_search_input"></form></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid">
+            <div class="row-fluid">
+                <div class="span1"></div>
+                <div class="span10">
+<article>
+<div class="row-fluid">
+    <header class="page-header span10 offset2">
+    <h1><a href="/worked-example-4-drawing-conclusions.html"> ﻿Worked Example - 4 drawing conclusions  </a></h1>
+    </header>
+</div>
+
+<div class="row-fluid">
+        <div class="span8 offset2 article-content">
+
+            
+            <p>Previous article: <a class="reference external" href="/worked-example-3-clean-data.html">Worked Example - 3 clean data</a></p>
+<p>Next article: <a class="reference external" href="/worked-example-5-communicate.html">Worked Example - 5 communicate</a></p>
+<div class="section" id="drawing-conclusions-discovering-new-things">
+<h2>Drawing conclusions - discovering new things</h2>
+<p>Up to this point we have mostly dealt with the background and the data, that led us to drawing preliminary conclusions. It is now time to put together a model which we believe describes the process that generates the data, and proceed with using the data in order to estimate the model.</p>
+<p>There are four main conceptual stages that we follow here, and that one will find in the modelling report.
+First comes the formulation of a conceptual model. We were given an initial question, we took a deeper look at the data, therefore by now we should have some ideas about what the target to explain should be, and what could possibly explain it. In our case we chose to focus on the LateAircraftDelay category in order to simplify our task - divide an conquer. In the modelling report one will find a first, simple conceptual model that we hoped could provide some insight.
+Then, we have to operationalise the more abstract ideas developed previously. For example, we thought that previous delays for an airplane, could help explain current delays. What exactly should this feature be? Should we be looking at the delays for only the previous flight, or maybe a longer time span. Should it be expressed in minutes, or a percentage of something? We answered this question and settled for the features that we thought could better capture the concepts
+The next step is to turn the above ideas into a concrete dataset. Write the queries and get the data out of the database, put everything together, take care of the data types and other details so that the finalised dataset is ready to fed to the algorithmic model we have chosen for our problem.
+Finally, we get to the estimation of the model. We have to choose the right parameters, fit the model to the data, and interpret the results. Is our model any good, have we learnt anything?</p>
+</div>
+<div class="section" id="input">
+<h2>input</h2>
+<p>At this stage the input is the clean dataset produced previously.</p>
+</div>
+<div class="section" id="output">
+<h2>output</h2>
+<p>The desired output for this section is:</p>
+<ul class="simple">
+<li>The modelling report. It is the main document that describes all the choices and results.</li>
+<li>A copy of the data set to use for the model</li>
+<li>A copy of the trained model</li>
+<li>The code script for this section</li>
+</ul>
+<p>If one takes the time to read the modelling report one will find detailed description of the actual project. There are two Jupyter Notebooks, one with the creation of the features and another with the estimation of the model.
+Take a look at them.</p>
+<p>Sources:</p>
+<ul class="simple">
+<li>You can find the relevant material for the fourth phase at the GitHub project <a class="reference external" href="https://github.com/andreas-masaoutis/dscp_code-documentation/tree/master/phase_4">repository</a></li>
+<li>For the preparation of the data and the new features created, take a look at the <a class="reference external" href="https://github.com/andreas-masaoutis/dscp_code-documentation/blob/master/phase_4/phase_4_codebase.ipynb">Jupyter Notebook</a></li>
+<li>As for the model trained, here is the <a class="reference external" href="https://github.com/andreas-masaoutis/dscp_code-documentation/blob/master/phase_4/phase_4_model1_codebase.ipynb">Notebook</a></li>
+</ul>
+<p><a class="reference external" href="#top">Back to top</a></p>
+</div>
+
+            
+            
+            <hr/>
+        </div>
+        <section>
+        <div class="span2" style="float:right;font-size:0.9em;">
+            <h4>Published</h4>
+            <time pubdate="pubdate" datetime="2019-04-12T10:20:00+02:00">Apr 12, 2019</time>
+
+<h4>Last Updated</h4>
+<time datetime="2019-10-04T18:40:00+02:00">Oct 4, 2019</time>
+
+            <h4>Category</h4>
+            <a class="category-link" href="/categories.html#4-worked-example-ref">4 Worked Example</a>
+            <h4>Tags</h4>
+            <ul class="list-of-tags tags-in-article">
+                <li><a href="/tags.html#machine-learning-ref">Machine Learning
+                    <span>2</span>
+</a></li>
+            </ul>
+<h4>Contact</h4>
+    <a href="i" title="My g Profile" class="sidebar-social-links" target="_blank">
+    <i class="fa fa-t sidebar-social-links"></i></a>
+    <a href="t" title="My h Profile" class="sidebar-social-links" target="_blank">
+    <i class="fa fa-t sidebar-social-links"></i></a>
+        </div>
+        </section>
+</div>
+</article>
+                </div>
+                <div class="span1"></div>
+            </div>
+        </div>
+        <div id="push"></div>
+    </div>
+<footer>
+<div id="footer">
+    <ul class="footer-content">
+        <li class="elegant-power">Powered by <a href="http://getpelican.com/" title="Pelican Home Page">Pelican</a>. Theme adapted from: <a href="http://oncrashreboot.com/pelican-elegant" title="Theme Elegant Home Page">Elegant</a> by <a href="http://oncrashreboot.com" title="Talha Mansoor Home Page">Talha Mansoor</a></li>
+    </ul>
+</div>
+</footer>            <script src="https://code.jquery.com/jquery.min.js"></script>
+        <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+        <script>
+            function validateForm(query)
+            {
+                return (query.length > 0);
+            }
+        </script>
+
+    
+    </body>
+    <!-- Theme: Elegant built for Pelican
+    License : http://oncrashreboot.com/pelican-elegant -->
+</html>
